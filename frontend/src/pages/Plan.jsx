@@ -99,10 +99,12 @@ export default function Plan() {
   }
 
   return (
-    <div className="page">
-      <div className="top-bar">
-        <h1>Wochenplan</h1>
-        <button className="btn btn-primary" onClick={() => setAddModal('Montag')}>+ Übung hinzufügen</button>
+    <div className="plan-page">
+      <div className="page" style={{ paddingBottom: 0 }}>
+        <div className="top-bar">
+          <h1>Wochenplan</h1>
+          <button className="btn btn-primary" onClick={() => setAddModal('Montag')}>+ Übung hinzufügen</button>
+        </div>
       </div>
 
       <div className="plan-scroll"><div className="plan-grid">

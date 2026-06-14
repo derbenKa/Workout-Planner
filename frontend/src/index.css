@@ -137,12 +137,15 @@ h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
 }
 
 /* Plan grid */
+.plan-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .plan-scroll {
   overflow-x: auto;
-  padding-bottom: 8px;
-  margin: 0 -24px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 0 24px 24px;
 }
 
 .plan-grid {
