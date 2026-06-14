@@ -105,7 +105,7 @@ export default function Plan() {
         <button className="btn btn-primary" onClick={() => setAddModal('Montag')}>+ Übung hinzufügen</button>
       </div>
 
-      <div className="plan-grid">
+      <div className="plan-scroll"><div className="plan-grid">
         {DAYS.map(day => (
           <div key={day} className="day-column">
             <div className="day-header">{DAY_SHORT[day]}</div>
@@ -122,7 +122,7 @@ export default function Plan() {
             </div>
           </div>
         ))}
-      </div>
+      </div></div>
 
       {addModal && (
         <AddToPlanModal
