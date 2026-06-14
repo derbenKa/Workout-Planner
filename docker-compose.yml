@@ -1,0 +1,11 @@
+services:
+  workout:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./data:/data
+      - ./data/uploads:/app/uploads
+    environment:
+      - DB_DIR=/data
