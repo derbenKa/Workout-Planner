@@ -139,15 +139,14 @@ h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
 /* Plan grid */
 .plan-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(160px, 1fr));
   gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
 }
 
-@media (max-width: 900px) {
-  .plan-grid { grid-template-columns: repeat(3, 1fr); }
-}
 @media (max-width: 600px) {
-  .plan-grid { grid-template-columns: 1fr; }
+  .plan-grid { grid-template-columns: repeat(3, minmax(140px, 1fr)); }
 }
 
 .day-column {
@@ -180,11 +179,54 @@ h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
 .plan-item .plan-detail { color: var(--text-muted); margin-bottom: 6px; }
 .plan-item .plan-thumb {
   width: 100%;
-  height: 60px;
-  object-fit: cover;
+  height: 100px;
+  object-fit: contain;
+  object-position: center;
   border-radius: 6px;
   margin-bottom: 6px;
+  background: var(--bg);
 }
+
+.plan-detail.clickable {
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background 0.15s;
+  font-size: 12px;
+}
+.plan-detail.clickable:hover { background: var(--surface); }
+
+.plan-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.plan-edit-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.plan-edit-row label {
+  font-size: 11px;
+  color: var(--text-muted);
+  width: 36px;
+  flex-shrink: 0;
+}
+.plan-edit input {
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7px 10px;
+  width: 100%;
+  outline: none;
+  box-sizing: border-box;
+}
+.plan-edit-actions { display: flex; gap: 6px; }
+.plan-edit-actions .btn { flex: 1; justify-content: center; }
 
 .add-to-day-btn {
   width: 100%;
