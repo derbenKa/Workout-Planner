@@ -140,13 +140,16 @@ h2 { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
 .plan-scroll {
   overflow-x: auto;
   padding-bottom: 8px;
+  margin: 0 -24px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .plan-grid {
   display: grid;
   grid-template-columns: repeat(7, minmax(160px, 1fr));
   gap: 12px;
-  min-width: 1120px;
+  min-width: 1180px;
 }
 
 @media (max-width: 600px) {
